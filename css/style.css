@@ -1,0 +1,465 @@
+/*    
+    color: #294023;
+    color: #6f553f;
+*/
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-transform: capitalize;
+  overflow-x: hidden;
+}
+*::selection {
+  background: #703b12;
+  color: #fff;
+}
+
+.nav-scrolled {
+  z-index: 1;
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  position: fixed;
+  top: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 93%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3rem;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 4rem;
+}
+.header {
+  z-index: 100;
+  background-color: transparent;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  position: fixed;
+  top: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 93%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3rem;
+  color: #fff;
+}
+
+/*header start*/
+#header h2 {
+  margin: 10px;
+}
+
+#header .nav-list {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  color: inherit;
+}
+#header .nav-list li {
+  margin-left: 3rem;
+  overflow: hidden;
+  color: inherit;
+}
+#header .nav-list li a {
+  position: relative;
+  z-index: 10000;
+  font-size: 2rem;
+  list-style-type: none;
+  transition: all 0.2s;
+  color: inherit;
+}
+
+#header .nav-list li a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 1;
+  bottom: -5px;
+  width: 100%;
+  height: 4px;
+  background-color: #703b12;
+  animation: slide-out 300ms ease-in-out forwards;
+}
+
+#header .nav-list li a:hover:after {
+  animation: slide-in 300ms;
+}
+
+#header .nav-list a:hover {
+  color: #703b12;
+  text-decoration: none;
+}
+/*home start*/
+#home {
+  width: 100vw;
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../img/bgk.png);
+  background-size: cover;
+  background-position: top;
+}
+#home .container {
+  min-height: 100%;
+}
+#home .content {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  color: #fff;
+  margin-top: 30%;
+  overflow: hidden;
+}
+#home .content h1 {
+  font-weight: bold;
+  font-size: 4rem;
+  margin: 1.5rem auto;
+  text-align: center;
+}
+#home .content p {
+  color: #777;
+  font-weight: 600;
+  margin: 2rem 0;
+  overflow-x: visible;
+  text-align: center;
+}
+#home .content .btn {
+  width: 25%;
+  border-radius: 0;
+  color: #fff;
+  background-color: #703b12;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin: 1.5rem auto;
+}
+#home .content .btn a {
+  color: #fff;
+  font-size: 1.5rem;
+}
+#home .content .btn a:hover {
+  text-decoration: none;
+}
+#home .content .btn::after {
+  content: "";
+  background-color: #703b12;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation-name: btnR;
+  animation-duration: 0.5s;
+  z-index: -1;
+}
+#home .content .btn:hover::after {
+  animation-name: btn;
+  animation-duration: 0.5s;
+}
+#home .image {
+  height: 100%;
+}
+#home .image img {
+  width: 100%;
+  margin-top: 30%;
+  animation-name: float;
+  animation-duration: 3s;
+  animation-delay: 0.5s;
+  animation-iteration-count: infinite;
+}
+/*start about*/
+#about {
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+}
+
+#about h1 {
+  z-index: 2;
+  font-weight: bold;
+  font-size: 4rem;
+  text-align: center;
+  margin: 3.5rem 0;
+}
+#about h1 > span {
+  color: #703b12;
+}
+
+#about .container .about-img {
+  overflow-x: hidden;
+}
+#about .container .about-img img {
+  width: 100%;
+  height: 100%;
+}
+#about .container .about-content h2 {
+  font-weight: 500;
+  color: black;
+}
+#about .container .about-content p {
+  line-height: 1.5;
+  letter-spacing: 0.8px;
+}
+#about .container .info {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+#about .container .info .info-item span {
+  display: inline-block;
+  font-size: 3rem;
+  background-color: #072d70;
+  color: #fff;
+  width: 60%;
+  height: 50px;
+  text-align: center;
+}
+
+#about .container .info .info-item .span1 {
+  background-color: #1d704b;
+}
+
+#about .container .info .info-item .span3 {
+  background-color: #701a0c;
+}
+
+#about .container .btn {
+  display: block;
+  width: 200px;
+  border-radius: 0;
+  color: #fff;
+  background-color: #703b12;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin: 20px auto;
+}
+
+#about .container .btn a {
+  color: #fff;
+  font-size: 1.5rem;
+}
+#about .container .btn a:hover {
+  text-decoration: none;
+}
+#about .container .btn::after {
+  content: "";
+  background-color: #703b12;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation-name: btnR;
+  animation-duration: 0.5s;
+  z-index: -1;
+}
+
+#about .container .btn:hover::after {
+  animation-name: btn;
+  animation-duration: 0.5s;
+}
+/*start anime*/
+#anime {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #333;
+  position: relative;
+}
+#anime .k-container h1 {
+  color: #fff;
+  width: 100%;
+  font-weight: bold;
+  font-size: 4rem;
+  text-align: center;
+  margin: 3.5rem 0;
+  display: block;
+}
+#anime .k-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1100px;
+}
+#anime .k-container .seasons {
+  position: relative;
+  width: 320px;
+  height: 420px;
+  margin: 15px;
+  overflow: hidden;
+}
+#anime .k-container .seasons .poster,
+#anime .k-container .seasons .infoBx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#anime .k-container .seasons .poster img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#anime .k-container .seasons .infoBx::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: right;
+  transition-delay: 0.5s;
+}
+#anime .k-container .seasons:hover .infoBx::before {
+  transform: scaleX(1);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: left;
+  transition-delay: 0s;
+}
+#anime .k-container .seasons .infoBx {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#anime .k-container .seasons .infoBx .s-info {
+  position: relative;
+  padding: 20px;
+  z-index: 1;
+  transition: 0.5s;
+  transform: translateX(-300px);
+  transition-delay: 0s;
+  color: #333;
+}
+#anime .k-container .seasons:hover .infoBx .s-info {
+  transform: translateX(0);
+  transition-delay: 0.5s;
+}
+#anime .k-container .seasons .infoBx .s-info h3 {
+  font-size: 2em;
+  letter-spacing: 1px;
+}
+#anime .k-container .seasons .infoBx .s-info span {
+  display: block;
+  font-size: 20px;
+}
+#anime .k-container .seasons .infoBx .s-info span:last-of-type {
+  margin-bottom: 50px;
+}
+
+#anime .k-container .seasons .infoBx .s-info button {
+  display: block;
+  width: 100px;
+  border-radius: 0;
+  color: #fff;
+  background-color: #333;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  border: none;
+  outline: none;
+  padding: 10px;
+}
+
+#anime .k-container .seasons .infoBx .s-info button a {
+  color: #fff;
+  font-size: 1.5rem;
+}
+#anime .k-container .seasons .infoBx .s-info button a:hover {
+  text-decoration: none;
+}
+#anime .k-container .seasons .infoBx .s-info button::after {
+  content: "";
+  background-color: #333;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation-name: btnR;
+  animation-duration: 0.5s;
+  z-index: -1;
+}
+#anime .k-container .seasons .infoBx .s-info button:hover::after {
+  animation-name: btn;
+  animation-duration: 0.5s;
+}
+
+@keyframes btn {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes btnR {
+  0% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(-10px);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: translate(100%, 0);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translate(-100%, 0);
+  }
+  100% {
+    transform: none;
+  }
+}
